@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <!-- Template_ folders are reference-only; exclude them from compilation -->
+  <ItemGroup>
+    <Compile Remove="Template_Controllers\**\*.cs" />
+    <Compile Remove="Template_Data\**\*.cs" />
+    <Compile Remove="Template_DTOs\**\*.cs" />
+    <Compile Remove="Template_Extensions\**\*.cs" />
+    <Compile Remove="Template_Middleware\**\*.cs" />
+    <Compile Remove="Template_Models\**\*.cs" />
+    <Compile Remove="Template_Services\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
