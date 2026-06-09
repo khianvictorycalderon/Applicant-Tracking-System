@@ -27,14 +27,14 @@ builder.Services.AddControllers()
 // ----------------------------------------------------------------
 var app = builder.Build();
 
-await DbSeeder.SeedAdminAsync(app);
-
 // Auto-migrate on startup
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     await db.Database.MigrateAsync();
 }
+
+await DbSeeder.SeedAdminAsync(app);
 
 app.UseCorsPolicy();
 app.UseSessionAuth();
