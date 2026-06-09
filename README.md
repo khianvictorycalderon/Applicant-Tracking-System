@@ -48,19 +48,25 @@
 - **Vite React (Typescript)**
 - **Tailwind CSS**
 - **ASP.NET Core Web API**
-- **MS SQL Server**
+- **PostgreSQL** *(Migrated from SQL Server due to deployment issues)*
 
 ---
 
 ## Prerequisites
 - NodeJS
 - .NET Core
-- MS SQL Server
+- PostgreSQL Server
 
 ---
 
 ### Inside `backend` folder:
-1. Update the `appsettings.Development.json` depending on your frontend origin *(The `"Cors": { "AllowedOrigins": [] }` part)* and the `"ConnectionStrings": { "DefaultConnection": "..." } ` for your own sql server database.
+1. Create an `.env` file that contains:
+  ```env
+  ConnectionStrings__DefaultConnection=Host=localhost;Port=5432;Database=ats_db;Username=postgres;Password=yourpassword
+  Cors__AllowedOrigins__0=http://localhost:3000
+  Session__DurationHours=6
+  ```
+  *Note: Change the env credentials depending on your PostgreSQL database*
 2. Run this if you haven't installed entity framework before:
     ```cmd
     dotnet tool install --global dotnet-ef --version 8.0.0
@@ -101,7 +107,7 @@ This section is provided for reference only, to give you insight into how the pr
 *(Note: Some dependencies are intentionally using old versions for stable releases)*
 - `dotnet add package BCrypt.Net-Next --version 4.0.3`
 - `dotnet add package Microsoft.EntityFrameworkCore --version 8.0.0`
-- `dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 8.0.0`
+- `dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 8.0.0`
 - `dotnet add package Microsoft.EntityFrameworkCore.Tools --version 8.0.0`
     
 ## Frontend Dependencies & Configuration
