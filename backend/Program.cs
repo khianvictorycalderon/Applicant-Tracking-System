@@ -1,5 +1,8 @@
 using backend.Extensions;
 using backend.Middleware;
+using DotNetEnv;
+
+Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 

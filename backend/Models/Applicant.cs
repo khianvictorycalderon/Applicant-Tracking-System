@@ -35,18 +35,18 @@ public class Applicant
     public string Email { get; set; } = string.Empty;
 
     // JSON-serialized list of education entries
-    [Column("education", TypeName = "nvarchar(max)")]
+    [Column("education")]
     public string Education { get; set; } = "[]";
 
     // JSON-serialized list of work experience entries (optional)
-    [Column("work_experience", TypeName = "nvarchar(max)")]
+    [Column("work_experience")]
     public string WorkExperience { get; set; } = "[]";
 
     // JSON-serialized list of skill strings
-    [Column("skills", TypeName = "nvarchar(max)")]
+    [Column("skills")]
     public string Skills { get; set; } = "[]";
 
-    [Column("notes", TypeName = "nvarchar(max)")]
+    [Column("notes")]
     public string? Notes { get; set; }
 
     [Required]

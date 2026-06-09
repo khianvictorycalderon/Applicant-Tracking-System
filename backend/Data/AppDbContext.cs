@@ -22,10 +22,10 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
                   .HasDefaultValue("Member");
 
             entity.Property(u => u.CreatedAt)
-                  .HasDefaultValueSql("GETUTCDATE()");
+                  .HasDefaultValueSql("NOW()");
 
             entity.Property(u => u.UpdatedAt)
-                  .HasDefaultValueSql("GETUTCDATE()");
+                  .HasDefaultValueSql("NOW()");
         });
 
         // Session
@@ -37,10 +37,10 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
                   .OnDelete(DeleteBehavior.Cascade);
 
             entity.Property(s => s.CreatedAt)
-                  .HasDefaultValueSql("GETUTCDATE()");
+                  .HasDefaultValueSql("NOW()");
 
             entity.Property(s => s.LastSeen)
-                  .HasDefaultValueSql("GETUTCDATE()");
+                  .HasDefaultValueSql("NOW()");
         });
 
         // Applicant
@@ -64,10 +64,10 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
                   .HasDefaultValue("[]");
 
             entity.Property(a => a.CreatedAt)
-                  .HasDefaultValueSql("GETUTCDATE()");
+                  .HasDefaultValueSql("NOW()");
 
             entity.Property(a => a.UpdatedAt)
-                  .HasDefaultValueSql("GETUTCDATE()");
+                  .HasDefaultValueSql("NOW()");
         });
     }
 }
