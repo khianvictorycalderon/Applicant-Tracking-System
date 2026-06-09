@@ -220,11 +220,8 @@ export const FOOTER_BUTTONS: Record<
     { label: "Khian Victory Calderon (GitHub)", href: "https://github.com/khianvictorycalderon" },
   ],
 
-  A: [
-    { label: "Placeholder", href: "#" },
-    { label: "Placeholder", href: "#" },
-    { label: "Placeholder", href: "#" },
-    { label: "Placeholder", href: "#" },
+  "References": [
+    { label: "GitHub Source Code", href: "https://github.com/khianvictorycalderon/Applicant-Tracking-System" }
   ],
 
   B: [
@@ -266,8 +263,15 @@ export const CHANGELOGS: { release: string; changes: string[] }[] = [
     {
         release: "1.0.0",
         changes: [
-            "Initial Release", 
-            "Released on June X 2026."
+            "Released and DEPLOYED on June 9, 2026.",
+            "Migrated from SQL Server to PostgreSQL for database due to deployment constraint."
+        ]
+    },
+    {
+        release: "Beta",
+        changes: [
+            "Released on June 7, 2026.",
+            "Initial Release using MS SQL as database but undeployed and as open-source."
         ]
     },
   ];
@@ -275,7 +279,7 @@ export const CHANGELOGS: { release: string; changes: string[] }[] = [
 // ---------------------------------------------------
 // Terms and Conditions
 // ---------------------------------------------------
-export const TERMS_LAST_UPDATED_DATE: string = "June X, 2026 @ X:XX PM";
+export const TERMS_LAST_UPDATED_DATE: string = "June 9, 2026 @ 12:00 AM";
 
 export const TERMS_CONDITIONS: { title: string; desc: string }[] = [
     {
@@ -300,7 +304,7 @@ export const TERMS_CONDITIONS: { title: string; desc: string }[] = [
 // ---------------------------------------------------
 // Privacy Policy
 // ---------------------------------------------------
-export const PRIVACY_LAST_UPDATED_DATE: string = "June X, 2026 @ X:XX PM";
+export const PRIVACY_LAST_UPDATED_DATE: string = "June 9, 2026 @ 12:00 AM";
 
 export const PRIVACY_POLICY: { title: string; desc: string }[] = [
     {
