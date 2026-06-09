@@ -17,6 +17,7 @@ import TermsConditions from "./public_pages/TermsConditions";
 import PublicLayoutRedirect from "./layouts/PublicLayoutRedirect";
 import ApplicantsManagement from "./private_pages/ApplicantsManagement";
 import UsersManagement from "./private_pages/UsersManagement";
+import { ENV } from "./constants";
 
 const PUBLIC_PAGES = [
   { path: "/", element: <LandingPage /> },
@@ -40,8 +41,19 @@ const PRIVATE_PAGES = [
 
 export default function App() {
 
+  // Ping the backend to wake-up before going to the login or register page
+  const handlePingBackend = async() => {
+    try {
+      await fetch(ENV.VITE_API_URL);
+      console.log("Ping success!");
+    } catch (e: unknown) {
+      console.error(`Ping failed: ${String(e)}`);
+    }
+  }
+
   // Theme initializer
   useEffect(() => {
+    handlePingBackend();
     setTheme(getTheme());
   }, []);
 

@@ -6,7 +6,7 @@ export type UserRole = "Admin" | "Member";
 // ---------------------------------------------------
 // API URL
 // ---------------------------------------------------
-const ENV = import.meta.env;
+export const ENV = import.meta.env;
 
 export const ROLE_BASED_API_URLS = {
     admin: `${ENV.VITE_API_URL}/api/admin`,
